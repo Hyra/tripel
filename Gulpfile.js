@@ -11,8 +11,8 @@ gulp.task('browserify', function() {
   b.transform(reactify);
   b.add('./client/app.js');
   return b.bundle()
-    .pipe(source('app.js'))
-    .pipe(gulp.dest('./dist'));
+    .pipe(source('bundle.js'))
+    .pipe(gulp.dest('./dist/js'));
 });
 
 // Styles task
