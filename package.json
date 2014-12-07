@@ -1,0 +1,11 @@
+{
+  "name": "Pushflow",
+  "version": "0.0.1",
+  "description": "Pushflow",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stef van den Ham (stef@mindthecode.com)",
+  "license": "ISC"
+}
