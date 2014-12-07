@@ -7,5 +7,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Stef van den Ham (stef@mindthecode.com)",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "browserify": "^7.0.0",
+    "gulp": "^3.8.10",
+    "reactify": "^0.17.1",
+    "vinyl-source-stream": "^1.0.0"
+  }
 }
