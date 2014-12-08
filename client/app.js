@@ -13,8 +13,12 @@ var App = React.createClass({
         <h1>My App</h1>
 
         <Link
-          to="state"
-        >Linkje</Link>
+          to="dashboard"
+        >Dashboard</Link>
+
+        <Link
+          to="projects"
+        >Projects</Link>
 
         <RouteHandler/>
       </div>
@@ -22,18 +26,18 @@ var App = React.createClass({
   }
 });
 
-var Home = React.createClass({
+var Dashboard = React.createClass({
   render: function() {
     return (
-      <div><h1>Home</h1></div>
+      <div><h2>Ik ben een dashboard</h2></div>
     );
   }
 });
 
-var About = React.createClass({
+var Projects = React.createClass({
   render: function() {
     return (
-      <div><h1>About</h1></div>
+      <div><h3>Project overzicht</h3></div>
     );
   }
 });
@@ -42,7 +46,6 @@ var routes = (
   <Route name="app" handler={App}>
     <Route name="dashboard" path="/" handler={Dashboard}/>
     <Route name="projects" path="/projects" handler={Projects}/>
-    <DefaultRoute handler={Home}/>
   </Route>
 );
 
