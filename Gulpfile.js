@@ -33,3 +33,16 @@ gulp.task('views', function() {
   // And put it in the public folder
   .pipe(gulp.dest('./dist/'));
 });
+
+// Watch task
+gulp.task('watch', function() {
+  gulp.watch(['client/*.js', 'client/**/*.js'], ['browserify']);
+
+  gulp.watch(['client/styles/**/*.scss'], ['styles']);
+
+  gulp.watch(['client/**/*.html'], ['views']);
+
+});
+
+// Default task
+gulp.task('default', ['watch']);
