@@ -7,7 +7,6 @@ var reactify = require('reactify');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var nodemon = require('gulp-nodemon');
-
 var jshint = require('gulp-jshint');
 
 // Serve task
@@ -27,6 +26,13 @@ gulp.task('browserify', function() {
   return b.bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./dist/js'));
+});
+
+// JSHint task
+gulp.task('lint', function() {
+  gulp.src('client/**/*.js')
+  .pipe(jshint())
+  .pipe(jshint.reporter('default'));
 });
 
 // Styles task
