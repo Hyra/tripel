@@ -1,10 +1,23 @@
+'use strict';
+
 var browserify = require('browserify');
 var gulp = require('gulp');
 var source = require('vinyl-source-stream');
 var reactify = require('reactify');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
+var nodemon = require('gulp-nodemon');
+
 var jshint = require('gulp-jshint');
+
+// Serve task
+gulp.task('serve', function() {
+  nodemon({ script: 'server.js', ext: 'json js', ignore: ['dist/*', 'client/*'] })
+  .on('change', [])
+  .on('restart', function() {
+    console.log('Restarted webserver');
+  });
+});
 
 // Browserify task
 gulp.task('browserify', function() {
@@ -46,4 +59,4 @@ gulp.task('watch', function() {
 });
 
 // Default task
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'serve']);
