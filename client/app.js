@@ -1,23 +1,27 @@
 var React = require('react');
 var Router = require('react-router');
-var Route = Router.Route;
-var DefaultRoute = Router.DefaultRoute;
-var RouteHandler = Router.RouteHandler;
-var Link = Router.Link;
+
+var Route = Router.Route,
+    DefaultRoute = Router.DefaultRoute,
+    RouteHandler = Router.RouteHandler,
+    Link = Router.Link;
 
 var App = React.createClass({
   render: function() {
     return (
       <div>
-        <h1>Hello</h1>
+        <h1>My App</h1>
+
         <Link
-            to="state"
-          >Linkje</Link>
+          to="state"
+        >Linkje</Link>
+
         <RouteHandler/>
       </div>
     );
   }
 });
+
 var Home = React.createClass({
   render: function() {
     return (
@@ -25,6 +29,7 @@ var Home = React.createClass({
     );
   }
 });
+
 var About = React.createClass({
   render: function() {
     return (
@@ -34,9 +39,10 @@ var About = React.createClass({
 });
 
 var routes = (
-  <Route handler={App}>
+  <Route name="app" handler={App}>
+    <Route name="dashboard" path="/" handler={Dashboard}/>
+    <Route name="projects" path="/projects" handler={Projects}/>
     <DefaultRoute handler={Home}/>
-    <Route name="state" path="hoi" handler={About}/>
   </Route>
 );
 
