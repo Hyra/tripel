@@ -22,7 +22,7 @@ gulp.task('serve', function() {
 // Browserify task
 gulp.task('browserify', function() {
   var b = browserify();
-  b.transform(reactify);
+  b.transform({es6: true}, reactify);
   b.add('./client/app.js');
   return b.bundle()
     .pipe(source('bundle.js'))
@@ -50,10 +50,14 @@ gulp.task('views', function() {
 
 // Watch task
 gulp.task('watch', function() {
+
+  // Javascript files
   gulp.watch(['client/*.js', 'client/**/*.js'], ['browserify']);
 
+  // SASS files
   gulp.watch(['client/styles/**/*.scss'], ['styles']);
 
+  // HTML files
   gulp.watch(['client/**/*.html'], ['views']);
 
 });
