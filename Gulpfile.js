@@ -6,6 +6,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var jshint = require('gulp-jshint');
 
+// Browserify task
 gulp.task('browserify', function() {
   var b = browserify();
   b.transform(reactify);
