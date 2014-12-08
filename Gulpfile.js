@@ -58,7 +58,7 @@ gulp.task('views', function() {
 gulp.task('watch', function() {
 
   // Javascript files
-  gulp.watch(['client/*.js', 'client/**/*.js'], ['browserify']);
+  gulp.watch(['client/*.js', 'client/**/*.js'], ['lint', 'browserify']);
 
   // SASS files
   gulp.watch(['client/styles/**/*.scss'], ['styles']);
