@@ -1,30 +1,12 @@
 var React = require('react');
-var Router = require('react-router');
 
-var Route = Router.Route,
+var Router = require('react-router'),
+    Route = Router.Route,
     DefaultRoute = Router.DefaultRoute,
     RouteHandler = Router.RouteHandler,
     Link = Router.Link;
 
-var App = React.createClass({
-  render: function() {
-    return (
-      <div>
-        <h1>My App</h1>
-
-        <Link
-          to="dashboard"
-        >Dashboard</Link>
-
-        <Link
-          to="projects"
-        >Projects</Link>
-
-        <RouteHandler/>
-      </div>
-    );
-  }
-});
+var App = require('./components/App.js');
 
 var Dashboard = React.createClass({
   render: function() {
