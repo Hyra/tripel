@@ -10,16 +10,14 @@ var {
     Link
 } = Router;
 
-var App = React.createClass({
+var Home = React.createClass({
   render: function() {
     return (
       <div>
-        <Link to="home">Home</Link>
-        <Link to="secondPage">Secondary Page</Link>
-        <RouteHandler />
+        I am the main homepage
       </div>
     )
   }
 });
 
-module.exports = App;
+module.exports = Home;

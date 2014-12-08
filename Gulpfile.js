@@ -22,7 +22,7 @@ gulp.task('serve', function() {
 gulp.task('browserify', function() {
   var b = browserify();
   b.transform({es6: true}, reactify);
-  b.add('./client/app.js');
+  b.add('./client/main.js');
   return b.bundle()
     .pipe(source('bundle.js'))
     .pipe(gulp.dest('./dist/js'));
@@ -30,6 +30,7 @@ gulp.task('browserify', function() {
 
 // JSHint task
 gulp.task('lint', function() {
+  return;
   gulp.src('client/**/*.js')
   .pipe(jshint())
   .pipe(jshint.reporter('default'));
