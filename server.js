@@ -43,7 +43,7 @@ app.use(function(req, res, next) {
 
 // HTML5 Pushstate support
 app.get('*', function(req, res) {
-  res.sendFile(__dirname + '/dist/index.html');
+  res.sendFile('./dist/index.html', { root: __dirname });
 });
 
 if(!module.parent) {
