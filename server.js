@@ -21,6 +21,7 @@ if(env === 'development') {
   app.use(livereload({port: 35729}));
 }
 
+// Express settings
 app.use(express.static(__dirname + '/dist'));
 app.use(morgan('dev'));
 app.use(cookieParser());
@@ -46,6 +47,7 @@ app.get('*', function(req, res) {
   res.sendFile('./dist/index.html', { root: __dirname });
 });
 
+// Start the app
 if(!module.parent) {
   app = app.listen(config.port);
   console.log('App listening on port ' + config.port);
