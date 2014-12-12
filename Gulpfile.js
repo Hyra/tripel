@@ -8,6 +8,7 @@ var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var nodemon = require('gulp-nodemon');
 var jshint = require('gulp-jshint');
+var refresh = require('gulp-livereload');
 
 // Serve task
 gulp.task('serve', function() {
@@ -57,6 +58,7 @@ gulp.task('views', function() {
 
 // Watch task
 gulp.task('watch', function() {
+  refresh.listen();
 
   // Javascript files
   gulp.watch(['client/*.js', 'client/**/*.js'], ['lint', 'browserify']);
@@ -67,7 +69,12 @@ gulp.task('watch', function() {
   // HTML files
   gulp.watch(['client/**/*.html'], ['views']);
 
+  // Watch for files to refresh
+  gulp.watch('./dist/**').on('change', refresh.changed);
 });
 
+// Build task
+gulp.task('build', ['views', 'styles', 'browserify', 'watch', 'serve']);
+
 // Default task
-gulp.task('default', ['watch', 'serve']);
+gulp.task('default', ['build', 'watch', 'serve']);
