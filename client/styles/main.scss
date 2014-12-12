@@ -1,3 +1,11 @@
 body {
-  background: red;
+  background: #EFEFEF;
+}
+
+a {
+  color: #333;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
 }
