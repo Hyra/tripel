@@ -1,10 +1,14 @@
-var React = require('react');
+'use strict';
 
-var Router = require('react-router'),
-    Route = Router.Route,
-    DefaultRoute = Router.DefaultRoute,
-    RouteHandler = Router.RouteHandler,
-    Link = Router.Link;
+var React = require('react'),
+    Router = require('react-router'),
+    {
+      Route,
+      DefaultRoute,
+      NotFoundRoute,
+      RouteHandler,
+      Link
+    } = Router;
 
 var App = require('./components/App.js');
 var Home = require('./components/Home.js');

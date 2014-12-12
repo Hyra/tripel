@@ -1,14 +1,14 @@
 'use strict';
 
-var React = require('react');
-var Router = require('react-router');
-var {
-    Route,
-    DefaultRoute,
-    NotFoundRoute,
-    RouteHandler,
-    Link
-} = Router;
+var React = require('react'),
+    Router = require('react-router'),
+    {
+      Route,
+      DefaultRoute,
+      NotFoundRoute,
+      RouteHandler,
+      Link
+    } = Router;
 
 var App = React.createClass({
   render: function() {
